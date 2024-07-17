@@ -10,6 +10,7 @@ use nalgebra_glm::Vec3;
 fn main() {
     let white = Color::new(255, 255, 255);
     let yellow = Color::new(255, 255, 0);
+    let blue = Color::new(0, 0, 255);
 
     let mut fb = Framebuffer::new(800, 600);
 
@@ -31,7 +32,16 @@ fn main() {
         Vec3::new(193.0, 383.0, 0.0),
     ];
 
+    // Polígono 2
+    let polygon2 = vec![
+        Vec3::new(321.0, 335.0, 0.0),
+        Vec3::new(288.0, 286.0, 0.0),
+        Vec3::new(339.0, 251.0, 0.0),
+        Vec3::new(374.0, 302.0, 0.0),
+    ];
+
     draw_polygon(&mut fb, &polygon1, &[], yellow, white);
+    draw_polygon(&mut fb, &polygon2, &[], blue, white);
 
     fb.render_buffer("out.bmp").unwrap();
     println!("Framebuffer rendered to out.bmp");
