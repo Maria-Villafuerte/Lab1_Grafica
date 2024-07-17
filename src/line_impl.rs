@@ -1,3 +1,4 @@
+//Archivo line_impl.rs
 use crate::framebuffer::Framebuffer;
 
 pub trait Line {

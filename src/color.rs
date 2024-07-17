@@ -1,4 +1,5 @@
 use std::ops::{Add, Mul};
+
 #[derive(Debug, Clone, Copy)]
 pub struct Color {
     r: u8,
@@ -26,7 +27,6 @@ impl Color {
         ((self.r as u32) << 16) | ((self.g as u32) << 8) | (self.b as u32)
     }
 }
-
 
 // Implementación del trait Add para la estructura Color
 impl Add for Color {

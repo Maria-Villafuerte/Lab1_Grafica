@@ -1,4 +1,5 @@
 use crate::color::Color;
+use nalgebra_glm::Vec3;
 use std::io::{self, Write};
 
 pub struct Framebuffer {
@@ -121,7 +122,13 @@ impl Framebuffer {
 
         Ok(())
     }
-    pub fn line(&mut self, x1: isize, y1: isize, x2: isize, y2: isize) {
+
+    pub fn line(&mut self, start: Vec3, end: Vec3) {
+        let x1 = start.x.round() as isize;
+        let y1 = start.y.round() as isize;
+        let x2 = end.x.round() as isize;
+        let y2 = end.y.round() as isize;
+
         let dx = (x2 - x1).abs();
         let dy = (y2 - y1).abs();
         let sx = if x1 < x2 { 1 } else { -1 };

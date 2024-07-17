@@ -1,3 +1,4 @@
+//Archivo bmp.rs
 use crate::framebuffer::Framebuffer;
 use std::io::{self, Write};
 

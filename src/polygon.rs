@@ -1,19 +1,20 @@
+use nalgebra_glm::Vec3;
 use crate::framebuffer::Framebuffer;
 
 pub trait Polygon {
-    fn draw_polygon(&mut self, points: &[(isize, isize)]);
+    fn draw_polygon(&mut self, points: &[Vec3]);
 }
 
 impl Polygon for Framebuffer {
-    fn draw_polygon(&mut self, points: &[(isize, isize)]) {
+    fn draw_polygon(&mut self, points: &[Vec3]) {
         if points.len() < 2 {
             return; // No se puede dibujar un polígono con menos de 2 puntos
         }
 
         for i in 0..points.len() {
-            let (x1, y1) = points[i];
-            let (x2, y2) = points[(i + 1) % points.len()];
-            self.line(x1, y1, x2, y2);
+            let start = points[i];
+            let end = points[(i + 1) % points.len()];
+            self.line(start, end);
         }
     }
 }
