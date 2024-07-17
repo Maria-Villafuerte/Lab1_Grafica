@@ -84,7 +84,7 @@ fn main() {
     draw_polygon(&mut fb, &polygon3, &[], red, white);
     draw_polygon(&mut fb, &polygon4, &[polygon5], green, white);
 
-    fb.render_buffer("out.bmp").unwrap();
+    fb.render_buffer("out1.bmp").unwrap();
     println!("Framebuffer rendered to out.bmp");
 }
 
