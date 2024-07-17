@@ -11,6 +11,7 @@ fn main() {
     let white = Color::new(255, 255, 255);
     let yellow = Color::new(255, 255, 0);
     let blue = Color::new(0, 0, 255);
+    let red = Color::new(255, 0, 0);
 
     let mut fb = Framebuffer::new(800, 600);
 
@@ -40,12 +41,21 @@ fn main() {
         Vec3::new(374.0, 302.0, 0.0),
     ];
 
+    // Polígono 3
+    let polygon3 = vec![
+        Vec3::new(377.0, 249.0, 0.0),
+        Vec3::new(411.0, 197.0, 0.0),
+        Vec3::new(436.0, 249.0, 0.0),
+    ];
+
     draw_polygon(&mut fb, &polygon1, &[], yellow, white);
     draw_polygon(&mut fb, &polygon2, &[], blue, white);
+    draw_polygon(&mut fb, &polygon3, &[], red, white);
 
     fb.render_buffer("out.bmp").unwrap();
     println!("Framebuffer rendered to out.bmp");
 }
+
 
 
 fn draw_polygon(fb: &mut Framebuffer, vertices: &[Vec3], holes: &[Vec<Vec3>], fill_color: Color, line_color: Color) {
