@@ -32,5 +32,5 @@ Cada polígono se ha dibujado en una rama separada, y las ramas se han fusionado
 
 1. Clonar el repositorio:
    ```sh
-   git clone https://github.com/tu_usuario/tu_repositorio.git
+   git clone https://github.com/tu_usuario/tu_repositorio.git](https://github.com/Maria-Villafuerte/Lab1_Grafica
    cd tu_repositorio
